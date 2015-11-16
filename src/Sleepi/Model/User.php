@@ -1,0 +1,9 @@
+<?php
+namespace Sleepi\Model;
+
+use Illuminate\Database\Eloquent\Model as Eloquent;
+
+class User extends Eloquent
+{
+
+}

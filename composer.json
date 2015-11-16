@@ -1,0 +1,23 @@
+{
+    "description": "Simple Slim Framework 3 skeleton for API Development",
+    "type": "project",
+    "keywords": ["slim-framework", "slim-api"],
+    "authors": [
+        {
+            "name": "Muhammad Amirul Ihsan",
+            "email": "muh.amirul.ihsan@gmail.com",
+            "homepage": "http://github.com/maicode"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sleepi\\": "src/Sleepi"
+        }
+    },
+    "require": {
+        "slim/slim": "^3.0@beta",
+        "monolog/monolog": "^1.13",
+        "robmorgan/phinx": "^0.4.6",
+        "illuminate/database": "^5.1"
+    }
+}
