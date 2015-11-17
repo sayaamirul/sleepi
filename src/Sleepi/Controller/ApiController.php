@@ -1,9 +1,9 @@
 <?php
 namespace Sleepi\Controller;
 
-use Sleepi\Model\User;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Sleepi\Model\User;
 
 class ApiController
 {

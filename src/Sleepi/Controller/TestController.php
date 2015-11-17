@@ -1,9 +1,9 @@
 <?php
 namespace Sleepi\Controller;
 
-use Sleepi\Model\User;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Sleepi\Model\User;
 
 class TestController extends ApiController
 {
@@ -16,7 +16,7 @@ class TestController extends ApiController
             ->write(json_encode([
                     'status_code' => 200,
                     'status_message' => 'Success',
-                    'data'  => $users->all(),
+                    'data'  => $users->getUsers(),
             ]));
 
         return $response;
