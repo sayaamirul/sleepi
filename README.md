@@ -1,8 +1,9 @@
-# sleepi
+# Sleepi
 Simple Slim Framework 3 skeleton application for API development using:
 >- Slim Framework 3 RC
 >- Laravel Eloquent
 >- Robmorgan Phinx Migrations
+>- Vlucas Valitron Validator
 
 #How To Use
 - Clone it
