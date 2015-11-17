@@ -1,1 +1,3 @@
 vendor/
+phinx.yml
+/app/database.php
