@@ -7,5 +7,6 @@ Simple Slim Framework 3 skeleton application for API development using:
 #How To Use
 
 - Edit migrations config on phinx.yml file
-- Edit database settings on app/database.php
+- Create database settings file on "app/" (just copy code form database.php.dist filr & fit it to your db config)
 - Create Your routes on app/routes.php
+- Enjoy it !
