@@ -19,6 +19,7 @@
         "monolog/monolog": "^1.13",
         "robmorgan/phinx": "^0.4.6",
         "illuminate/database": "^5.1",
-        "vlucas/valitron": "^1.2"
+        "vlucas/valitron": "^1.2",
+        "vlucas/phpdotenv": "^2.1"
     }
 }
