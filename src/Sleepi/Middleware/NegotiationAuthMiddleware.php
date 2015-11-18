@@ -42,7 +42,7 @@ class NegotiationAuthMiddleware
         $userModel = new User();
         $apiKey = $request->getHeader('Authorization');
 
-        if (empty($apiKey)) {
+        if (empty($apiKey[0])) {
             return FALSE;
         }
 
