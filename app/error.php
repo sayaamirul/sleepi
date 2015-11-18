@@ -1,6 +1,6 @@
 <?php
 
-$c = $app->getContainer($configuration);
+$c = $app->getContainer();
 
 $c['errorHandler'] = function ($c) {
     return function ($request, $response, $exception) use ($c) {

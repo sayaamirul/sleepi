@@ -28,24 +28,20 @@ class AuthController extends ApiController
 
             $userModel->registerUser($data);
 
-            $response = $response->withStatus(201)
-                ->withHeader('Content-type', 'application/json')
-                ->write(json_encode([
-                        'status_code' => 201,
-                        'status_message' => 'Success',
-                        'data'  => $data,
-                ]));
+            $responseData = [
+                'status_code' => 201,
+                'status_message' => 'Success',
+                'data'  => $data,
+            ];
         } else {
-            $response = $response->withStatus(406)
-            ->withHeader('Content-type', 'application/json')
-            ->write(json_encode([
-                    'status_code' => 406,
-                    'status_message' => 'Error',
-                    'error_message'  => $v->errors(),
-            ]));
+            $responseData = [
+                'status_code' => 406,
+                'status_message' => 'Error',
+                'error_messages'  => $v->errors(),
+            ];
         }
 
-        return $response;
+        return $this->jsonResponse($response, $responseData);
     }
 
     public function loginAction(Request $request, Response $response, $args)

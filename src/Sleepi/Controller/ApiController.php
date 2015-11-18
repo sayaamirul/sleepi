@@ -7,6 +7,15 @@ use Sleepi\Model\User;
 
 class ApiController
 {
+    public function jsonResponse(Response $response, $responseData)
+    {
+        $response = $response->withStatus($responseData['status_code'])
+            ->withHeader('Content-type', 'application/json')
+            ->write(json_encode([$responseData]));
+
+        return $response;
+    }
+
     public function getCurrentUser(Request $request)
     {
         $userModel = new User();
