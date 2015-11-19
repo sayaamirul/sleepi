@@ -1,12 +1,14 @@
 # Sleepi
 Simple Slim Framework 3 skeleton application for API development using:
->- Slim Framework 3 RC
->- Laravel Database
->- Robmorgan Phinx Migrations
->- Vlucas Valitron Validator
->- Vlucas phpdotenv
+
+>- [Slim Framework 3 RC](http://www.slimframework.com/)
+>- [Laravel Database](https://github.com/illuminate/database)
+>- [Robmorgan Phinx Migrations](https://phinx.org/)
+>- [Vlucas Valitron Validator](https://github.com/vlucas/valitron)
+>- [Vlucas phpdotenv](https://github.com/vlucas/phpdotenv)
 
 #How To Use
+
 - Clone it
 - Run "composer install" from cli
 - Init phinx migration from cli "php vendor/bin/phinx init" on your project folder root
