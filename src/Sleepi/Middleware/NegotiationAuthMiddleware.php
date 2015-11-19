@@ -19,8 +19,8 @@ class NegotiationAuthMiddleware
                 $response = $response->withStatus(401)
                     ->withHeader('Content-type', 'application/json')
                     ->write(json_encode([
-                            'status_code'=> 401,
-                            'status_message' => 'Unauthorized, please provide a correct ApiKey',
+                        'status_code'=> 401,
+                        'status_message' => 'Unauthorized !',
                     ]));
 
                 return $response;
@@ -43,15 +43,15 @@ class NegotiationAuthMiddleware
         $apiKey = $request->getHeader('Authorization');
 
         if (empty($apiKey[0])) {
-            return FALSE;
+            return false;
         }
 
         $user = $userModel->countUserByKey($apiKey);
 
         if($user == 0){
-            return FALSE;
+            return false;
         }
 
-        return TRUE;
+        return true;
     }
 }
