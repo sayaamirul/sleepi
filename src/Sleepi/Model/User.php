@@ -3,17 +3,60 @@
 namespace Sleepi\Model;
 
 use Illuminate\Database\Capsule\Manager as Database;
+use DateTime;
 
 class User extends Database
 {
     protected $table = 'users';
 
-    public function registerUser($data = [])
+    public function register($data = [])
     {
-        $this->table('users')->insert([
-            'username' => $data['username'],
-            'password' => $data['password'],
-        ]);
+        $apiKey = hash(
+                'sha512',
+                $data['username'] . $data['password'] .
+                (new DateTime())->format('Y-m-d H:i:s'));
+        $password = hash('sha512', $data['password']);
+
+        $this->table('users')
+            ->insert([
+                'username' => $data['username'],
+                'password' => $password,
+                'fullname' => $data['fullname'],
+                'gender'   => $data['gender'],
+                'address'  => $data['address'],
+                'phone_number' => $data['phone_number'],
+                'api_key'  => $apiKey,
+            ]);
+    }
+
+    public function login($data = [])
+    {
+        $username = $data['username'];
+        $password = hash('sha512', $data['password']);
+
+        $user = $this->table('users')
+            ->select('api_key')
+            ->where('username', '=', $username)
+            ->where('password','=', $password);
+
+        $userExist = $user->count();
+        $userData = $user->get();
+
+        if($userExist == 0){
+            return false;
+        }
+
+        return $userData;
+    }
+
+    public function userExist($username)
+    {
+        $exist = $this->table('users')
+            ->select('id')
+            ->where('username', '=', $username)
+            ->count();
+
+        return $exist;
     }
 
     public function getUsers()

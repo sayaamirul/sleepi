@@ -32,14 +32,15 @@ class CreateTableUsers extends AbstractMigration
             ->addColumn('password', 'string', ['limit' => 200, 'null' =>false])
             ->addColumn('api_key', 'string', ['limit' => 255, 'null' => false])
             ->addColumn('user_level', 'integer', ['limit' => 1, 'null' => false, 'default' => 1])
-            ->addColumn('fullname', 'string', ['limit' => 150, 'null' => false])
-            ->addColumn('gender', 'string', ['limit' => 1])
-            ->addColumn('address', 'string', ['limit' => 100, 'null' => false] )
-            ->addColumn('phone_number', 'string', ['limit' => 15,'null' => false])
+            ->addColumn('fullname', 'string', ['limit' => 150, 'null' => true])
+            ->addColumn('gender', 'string', ['limit' => 1, 'null' => true])
+            ->addColumn('address', 'string', ['limit' => 100, 'null' => true ])
+            ->addColumn('phone_number', 'string', ['limit' => 15,'null' => true])
             ->addColumn('created_date', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('updated_date', 'datetime', ['default' => null , 'null' => true])
             ->addColumn('deleted', 'boolean', ['default' => false])
             ->addColumn('deleted_date', 'datetime', ['default' => null, 'null' => true])
+            ->addIndex('username', ['unique' => true])
             ->save();
     }
 }

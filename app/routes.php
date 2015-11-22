@@ -8,3 +8,6 @@ $app->get('/', 'Sleepi\Controller\TestController:indexAction')
 //Route with content negotiation
 $app->post('/auth/register', 'Sleepi\Controller\AuthController:registerAction')
     ->add(new \Sleepi\Middleware\NegotiationMiddleware());
+
+$app->post('/auth/login', 'Sleepi\Controller\AuthController:loginAction')
+    ->add(new \Sleepi\Middleware\NegotiationMiddleware());
