@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "slim/slim": "^3.0@beta",
+        "slim/slim": "^3.0@RC",
         "monolog/monolog": "^1.13",
         "robmorgan/phinx": "^0.4.6",
         "illuminate/database": "^5.1",
