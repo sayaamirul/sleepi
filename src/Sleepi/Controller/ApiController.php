@@ -11,7 +11,7 @@ class ApiController
     {
         $response = $response->withStatus($responseData['status_code'])
             ->withHeader('Content-type', 'application/json')
-            ->write(json_encode([$responseData]));
+            ->write(json_encode($responseData));
 
         return $response;
     }

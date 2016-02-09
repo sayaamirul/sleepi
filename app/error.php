@@ -22,7 +22,7 @@ $c['notAllowedHandler'] = function ($c) {
             ->withHeader('Content-type', 'application/json')
             ->write(json_encode([
                 'status_code' => 405,
-                'status_message' => 'Method must be one of: ' . implode(', ', $methods)
+                'status_message' => 'Method must be one of: '. implode(', ', $methods)
             ]));
     };
 };
